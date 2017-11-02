@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+<body>
+  <img src="file:///home/smtg/PycharmProjects/paiement_mandat/src/static_in_pro/our_static/img/pf.jpg" alt="Mon image"/>
+
+    <h2><center>RECU DE PAIEMENT</center></h2>
+    <p>
+        <strong>Periode:</strong>  {{ mandat.periode}}</br>
+    </p>
+
+    <h3>Infos Bénéficiaire:</h3>
+    <p>
+     <strong>N° Beneficiaire: </strong> {{ mandat.matricule}} <br>
+     <strong>Prenom: </strong>  {{ mandat.prenom }} <br>
+     <strong>Nom :   </strong> {{ mandat.nom }}<br>
+     <strong>Categorie:  </strong>  {{ mandat.categorie }}<br>
+     <strong>Secteur:  </strong>  {{ mandat.secteur }}<br>
+     <strong>Montant:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ mandat.montant }} </strong><br>
+     <strong>Bureau payeur: </strong> {{ agence_payeur }}  <br>
+     <strong>Date paiement: </strong> {% now "j F Y " %}<br><br>
+     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Piece d'identité: </strong><br>
+     <br>
+     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Signature:</strong><br>
+
+
+    </p>
+
+    <br><br><br><hr>
+   <img src="file:///home/smtg/PycharmProjects/paiement_mandat/src/static_in_pro/our_static/img/pf.jpg" alt="Mon image"/>
+   <h2><center>TITRE DE PAIEMENT</center></h2>
+    <p>
+        <strong>Periode:  </strong>{{ mandat.periode }}</br>
+    </p>
+
+    <h3>Infos Beneficiaire:</h3>
+    <p>
+     <strong> N° Beneficiaire: </strong> {{ mandat.matricule}}<br>
+     <strong>Prenom:  </strong>  {{ mandat.prenom }} <br>
+     <strong>Nom :   </strong> {{ mandat.nom }}<br>
+     <strong>Categorie:  </strong>  {{ mandat.categorie }}<br>
+    <strong> Secteur:  </strong>  {{ mandat.secteur }}<br>
+    <strong>Montant payé:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ mandat.montant }} </strong><br>
+    <strong>Bureau payeur: </strong> {{ agence_payeur }} <br>
+    <strong>Date paiement: </strong> {% now "j F Y " %}<br>
+    </p>
+</body>
+</html>

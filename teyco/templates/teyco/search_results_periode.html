@@ -1,0 +1,39 @@
+{% extends 'base_css.html' %}
+
+{% block content %}
+
+<div class="container">
+ <div>
+ <img src="file:///home/smtg/PycharmProjects/paiement_mandat/src/static_in_pro/our_static/img/pf.jpg" alt="Mon image"/>
+
+     <strong>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date : </strong> {% now "j F Y " %}<br> <br>
+ <h3>Rapport  de: {{ user.username }} &nbsp;&nbsp;&nbsp; du {{ debut }} au {{ fin }} </h3>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Categorie</th>
+          <th>Secteur</th>
+        <th>Montant</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for man in paiement %}
+      <tr>
+        <td>{{ man.prenom }}</td>
+        <td>{{ man.nom }}</td>
+        <td>{{ man.categorie }}</td>
+        <td>{{ man.secteur }}</td>
+        <td>{{ man.montant }}</td>
+        <td>{{ man.date_paiement|date:"d M Y" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+     <div> <h3>Nombre: {{  nombre }} Total: {{ total }} </h3> </div>
+  </div>
+
+{% endblock %}

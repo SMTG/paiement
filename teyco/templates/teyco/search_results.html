@@ -1,0 +1,43 @@
+{% extends 'base_css.html' %}
+
+{% block content %}
+
+<div class="container">
+ <div>
+ {% if not mandat %}
+ <br/>
+   <i><p style="color: red;">Le salarie no: {{ query }} est déja payé ou inexistant</p> </i>
+ {% else %}  
+  <p>Salarie: <strong>{{ query }}</strong></p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Categorie</th>
+          <th>Secteur</th>
+        <th>Montant</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for man in mandat %}
+      <tr>
+        <td>{{ man.prenom }}</td>
+        <td>{{ man.nom }}</td>
+        <td>{{ man.categorie }}</td>
+        <td>{{ man.secteur }}</td>
+        <td>{{ man.montant }}</td>
+        <td> <div class="row col-md-8 text-center"> 
+				<a href="{% url 'mandat_pdf' id=man.id  user_id=request.user.id %}" target="_blank" class="btn btn-primary btn-sm ">Payer</a>
+			</div>
+		</td>	
+      </tr>  
+      {% endfor %}  
+    </tbody>
+  </table>
+  {% endif %}
+  </div>
+	
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base_css.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<style>
+    {% block style %}
+      .jumbotron {
+         background-color:#0E3D14;
+         color: #FFF;
+      }
+    {% endblock %}
+</style>
+
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<div class="row">
+
+   <div class="col-sm-3">
+       <p class="lead text-align-center">Django &amp; Bootstrap</p>
+       <img src="{% static 'img/beach.jpg' %}" />
+   </div>
+    <div class="col-sm-3">
+       <p class="lead text-align-center">Created for Starters.
+           <br/>
+       </p>
+         <img src="{% static 'img/beach.jpg' %}" />
+   </div>
+    <div class="col-sm-3">
+       <p class="lead text-align-center"> Always Open Source.
+           <br/>
+       </p>
+        <img src="{% static 'img/beach.jpg' %}" />
+   </div>
+</div>
+{% endif %}
+{% endblock %}
+

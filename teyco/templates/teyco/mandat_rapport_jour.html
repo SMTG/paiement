@@ -1,0 +1,49 @@
+<html>
+ <head>
+   <title>Rapport</title>
+   <style>
+     h1 {
+       text-align: center;
+     }
+
+     table {
+       border: 1px solid;
+       margin: 0 auto;
+       width: 90%;
+     }
+
+     td, th {
+       text-align: left;
+       border: 1px solid;
+     }
+   </style>
+ </head>
+ <body>
+    {# <h1> Rapport Teyco</h1> #}
+   <h2>Rapport de Paiement de: {{ username }} </h2>
+  <strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date : </strong> {% now "j F Y " %}<br> <br>
+   <table>
+     <thead>
+       <tr>
+         <th>Matricule</th>
+         <th>Prenom</th>
+         <th>Nom</th>
+         <th>Montant</th>
+       </tr>
+     </thead>
+     <tbody>
+       {% for paie in paiements %}
+         <tr>
+           <td>{{ paie.matricule }}</td>
+           <td>{{ paie.prenom }}</td>
+           <td>{{ paie.nom }}</td>
+           <td>{{ paie.montant }}</td>
+         </tr>
+       {% endfor %}    
+     </tbody>
+   </table>
+   <br>
+   <h1>Nombre: {{  nombre }} Total: {{ total }} </h1>
+ </body>
+</html>
+	

@@ -1,0 +1,78 @@
+{% extends 'base_css.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<style>
+    {% block style %}
+      .jumbotron {
+         background-color:#0E3D14;
+         color: #FFF;
+      }
+    {% endblock %}
+</style>
+
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<div class="row">
+    <br/><br/><br/>
+</div>
+<div class="row">
+ <div class="col-sm-4">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'img/paie1.jpeg' %}" />
+    </div>
+
+    <div class="item">
+     <img src="{% static 'img/paie2.jpeg' %}" />
+    </div>
+
+    <div class="item">
+     <img src="{% static 'img/paie3.jpeg' %}" />
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="col-sm-4">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'img/paie3.jpeg' %}" />
+    </div>
+
+    <div class="item">
+     <img src="{% static 'img/paie1.jpeg' %}" />
+    </div>
+
+    <div class="item">
+     <img src="{% static 'img/paie2.jpeg' %}" />
+    </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+{% endif %}
+{% endblock %}
+

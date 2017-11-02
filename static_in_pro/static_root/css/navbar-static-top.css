@@ -1,0 +1,42 @@
+body {
+  min-height: 1000px;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+  background-color: #5142DD;
+  border-color:#5142DD;
+}
+
+.navbar-default .navbar-brand {
+color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover {
+color: #777;
+}
+.navbar-default .navbar-nav>li>a:hover {
+color: #2c528e;
+}
+
+.navbar-default .navbar-toggle {
+border-color: transparent !important;
+}
+
+.navbar-toggle:hover {
+background-color: #1A5F23;
+}
+
+.navbar-toggle {
+background-color: #0E3D14;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: blue;
+    white-space: nowrap;
+}
